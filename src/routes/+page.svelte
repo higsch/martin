@@ -24,8 +24,8 @@
 	.app-container {
 		position: relative;
 		z-index: 0;
-		width: 100vw;
-		height: 100vh;
+		width: 100svw;
+		height: 100svh;
 		background: linear-gradient(white -300%, var(--primary-color) 100%);
 	}
 
@@ -50,7 +50,7 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: space-between;
-		padding: 1rem;
+		padding: 2rem 1rem;
 	}
 
 	h1 {
