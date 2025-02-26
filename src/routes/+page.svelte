@@ -69,17 +69,21 @@
 		text-align: center;
 	}
 
+	p.answer,
+	p.tagesschau {
+		animation: fadein 2s ease-in;
+    color: white;
+	}
+
 	p.answer {
 		font-family: 'SpiegelSlab4UICd', serif;
 		font-size: 6rem;
 		line-height: 1.2;
-		color: white;
 	}
 
 	p.tagesschau {
 		font-family: 'SpiegelSans4UI', serif;
 		font-size: 1.5rem;
-		color: white;
 	}
 
 	p.byline,
@@ -88,5 +92,14 @@
 		font-size: 1.25rem;
 		color: whitesmoke;
 		opacity: 0.8;
+	}
+
+	@keyframes fadein {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
 	}
 </style>
