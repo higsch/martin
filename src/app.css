@@ -7,6 +7,14 @@
 }
 
 @font-face {
+	font-family: 'SpiegelSans4UI';
+	font-style: bold;
+	font-weight: 600;
+	src: url('https://cdn.prod.www.spiegel.de/public/shared/fonts/SpiegelSans4UI-Bold.woff2')
+		format('woff');
+}
+
+@font-face {
 	font-family: 'SpiegelSlab4UICd';
 	font-style: bold;
 	font-weight: 800;

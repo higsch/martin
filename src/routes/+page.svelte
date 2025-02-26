@@ -8,7 +8,7 @@
 
 <div class="app-container" style:--primary-color={isSpiegel ? '#e64415' : '#007aff'}>
 	<main>
-		<h1>Ist Martin noch beim Spiegel?</h1>
+		<h1>Ist <strong>Martin</strong> noch beim Spiegel?</h1>
 		<p class="answer">{isSpiegel ? 'Ja!' : 'Nein,'}</p>
 		{#if !isSpiegel}
 			<p class="tagesschau">er ist jetzt bei der Tagesschau!</p>
@@ -56,12 +56,21 @@
 	h1 {
 		margin: 0;
 		padding: 0;
-		font-family: 'SpiegelSans4UI', serif;
+		font-family: 'SpiegelSans4UI', sans-serif;
 		font-weight: normal;
 		font-size: 2rem;
 		text-align: center;
 		color: snow;
 	}
+
+  h1 strong {
+    background: white;
+    border: none;
+    border-radius: 0.675rem;
+    padding: 0.125rem 0.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+  }
 
 	p {
 		margin: 0;
@@ -76,19 +85,19 @@
 	}
 
 	p.answer {
-		font-family: 'SpiegelSlab4UICd', serif;
+		font-family: 'SpiegelSlab4UICd', sans-serif;
 		font-size: 6rem;
 		line-height: 1.2;
 	}
 
 	p.tagesschau {
-		font-family: 'SpiegelSans4UI', serif;
+		font-family: 'SpiegelSans4UI', sans-serif;
 		font-size: 1.5rem;
 	}
 
 	p.byline,
 	p.date {
-		font-family: 'SpiegelSans4UI', serif;
+		font-family: 'SpiegelSans4UI', sans-serif;
 		font-size: 1.25rem;
 		color: whitesmoke;
 		opacity: 0.8;
