@@ -7,23 +7,28 @@
 </script>
 
 <div class="app-container" style:--primary-color={isSpiegel ? '#e64415' : '#007aff'}>
+	<div class="underlay">
+		<p class="date">{today.toLocaleDateString()}</p>
+		<p class="byline">Alles Gute, Martin!</p>
+	</div>
 	<main>
-		<h1>Ist <strong>Martin</strong> noch beim Spiegel?</h1>
+		<!-- svelte-ignore a11y_img_redundant_alt -->
+		<h1>
+			Ist <a href="https://de.linkedin.com/in/martin-schön-7a95021a5"
+				>Martin<img src="/martin.jpeg" alt="Image of Martin when he still was at Der Spiegel" /></a
+			> noch beim Spiegel?
+		</h1>
 		<p class="answer">{isSpiegel ? 'Ja!' : 'Nein,'}</p>
 		{#if !isSpiegel}
 			<p class="tagesschau">er ist jetzt bei der Tagesschau!</p>
 		{/if}
 	</main>
-	<div class="overlay">
-		<p class="date">{today.toLocaleDateString()}</p>
-		<p class="byline">Alles Gute, Martin!</p>
-	</div>
 </div>
 
 <style>
 	.app-container {
 		position: relative;
-		z-index: 0;
+		z-index: 5;
 		width: 100svw;
 		height: 100svh;
 		background: linear-gradient(white -300%, var(--primary-color) 100%);
@@ -39,13 +44,13 @@
 		padding: 1rem;
 	}
 
-	.overlay {
+	.underlay {
 		position: absolute;
 		top: 0;
 		right: 0;
 		bottom: 0;
 		left: 0;
-		z-index: 5;
+		z-index: 0;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -63,14 +68,28 @@
 		color: snow;
 	}
 
-  h1 strong {
-    background: white;
-    border: none;
-    border-radius: 0.675rem;
-    padding: 0.125rem 0.5rem;
-    font-weight: bold;
-    color: var(--primary-color);
-  }
+	h1 a {
+		position: relative;
+		display: inline-block;
+		background: white;
+		border: none;
+		border-radius: 0.675rem;
+		padding: 0.125rem 0.5rem;
+		font-weight: bold;
+		color: var(--primary-color);
+    text-decoration: none;
+	}
+
+	h1 a img {
+		position: absolute;
+		top: -3rem;
+		right: -1.5rem;
+		width: 40px;
+		height: 40px;
+		margin: 1rem 0;
+		border: 3px solid white;
+		border-radius: 50%;
+	}
 
 	p {
 		margin: 0;
@@ -81,7 +100,7 @@
 	p.answer,
 	p.tagesschau {
 		animation: fadein 2s ease-in;
-    color: white;
+		color: white;
 	}
 
 	p.answer {
